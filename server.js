@@ -6,7 +6,7 @@ mongoDB = require('mongodb'),
 withThis = (obj, cb) => cb(obj),
 
 dbCall = (dbname, action) => mongoDB.MongoClient.connect(
-  process.env.atlas,
+  process.env.MONGO,
   {useNewUrlParser: true, useUnifiedTopology: true},
   (err, client) => action(client.db(dbname))
 ),
