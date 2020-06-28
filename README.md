@@ -13,7 +13,10 @@ If you're using localhost then:
 `MONGO="mongodb://localhost:27017"`
 
 ## Start
-`node server.js`
+```
+npm install
+node server.js
+```
 
 Get to http://localhost:3000
 
