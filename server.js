@@ -8,7 +8,8 @@ withThis = (obj, cb) => cb(obj),
 dbCall = (dbname, action) => mongoDB.MongoClient.connect(
   process.env.MONGO,
   {useNewUrlParser: true, useUnifiedTopology: true},
-  (err, client) => action(client.db(dbname))
+  (err, client) => err ? console.log(err)
+    : action(client.db(dbname))
 ),
 
 app = express()
