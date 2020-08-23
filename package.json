@@ -8,6 +8,6 @@
     "mongodb": "^3.5.9"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   }
 }
