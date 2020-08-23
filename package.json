@@ -1,5 +1,5 @@
 {
-  "name": "simrs",
+  "name": "express-crud",
   "version": "0.2.1",
   "license": "MIT",
   "dependencies": {
