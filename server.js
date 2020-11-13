@@ -1,6 +1,6 @@
-var
-dotenv = require('dotenv').config(),
+var dotenv = require('dotenv').config(),
 express = require('express'),
+bodyParser = require('body-parser'),
 mongoDB = require('mongodb'),
 {parse, stringify} = JSON,
 withThis = (obj, cb) => cb(obj)
@@ -10,7 +10,7 @@ mongoDB.MongoClient.connect(
   {useNewUrlParser: true, useUnifiedTopology: true},
   (err, client) =>
     express()
-    .use(express.json())
+    .use(bodyParser.json({limit: '50mb'}))
     .use(express.static("public"))
     .post('/dbCall', (req, res) => withThis(
       client.db(req.body.dbName),
